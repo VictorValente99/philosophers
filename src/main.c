@@ -12,6 +12,7 @@ int	main(int ac, char **av)
 		//3) start the simulation
 		dinner_time(&table);
 		//4) free the memory and destroy the mutexes
+		//just when philos are full || 1 died
 		clean(&table);
 	}
 	else
