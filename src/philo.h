@@ -6,21 +6,21 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 16:13:28 by victde-s          #+#    #+#             */
-/*   Updated: 2026/06/17 17:51:08 by victde-s         ###   ########.fr       */
+/*   Updated: 2026/06/18 16:35:49 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <stdbool.h>
-#include <sys/time.h>
-#include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <pthread.h>
+# include <stdbool.h>
+# include <sys/time.h>
+# include <limits.h>
 
-typedef	pthread_mutex_t t_mtx;
+typedef pthread_mutex_t	t_mtx;
 
 typedef struct s_fork
 {
@@ -28,7 +28,7 @@ typedef struct s_fork
 	int			fork_id;
 }	t_fork;
 
-typedef	struct s_philo
+typedef struct s_philo
 {
 	int			id;
 	long		meals_counter;
@@ -52,3 +52,8 @@ typedef struct s_table
 	t_fork		*forks;
 	t_mtx		print_mutex;
 }	t_table;
+
+void	parse_input(t_table *table, char **av);
+void	error_exit(char *message);
+
+#endif
